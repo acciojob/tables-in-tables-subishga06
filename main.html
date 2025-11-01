@@ -44,14 +44,28 @@
                 <td>Row 1 Data 1</td>
                 <td>Row 1 Data 2</td>
               </tr>
+            </tbody>
+          </table>
+
+          <!-- Nested Table 2 -->
+          <table>
+            <thead>
               <tr>
-                <td>Row 2 Data 1</td>
+                <th colspan="2">Nested Table 2</th>
+              </tr>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td>
-                  <!-- Nested Table 2 -->
+                  <!-- Nested Table 3 -->
                   <table>
                     <thead>
                       <tr>
-                        <th colspan="2">Nested Table 2</th>
+                        <th colspan="2">Nested Table 3</th>
                       </tr>
                       <tr>
                         <th>Column 1</th>
@@ -60,60 +74,38 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
+                        <td class="black-cell">HTML</td>
+                        <td>CSS</td>
                       </tr>
                       <tr>
                         <td>
-                          <!-- Nested Table 3 -->
+                          <!-- Nested Table 4 -->
                           <table>
                             <thead>
                               <tr>
-                                <th colspan="2">Nested Table 3</th>
-                              </tr>
-                              <tr>
-                                <th>Column 1</th>
-                                <th>Column 2</th>
+                                <th colspan="2">Nested Table 4</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td class="black-cell">HTML</td>
-                                <td>CSS</td>
-                              </tr>
-                              <tr>
                                 <td>
-                                  <!-- Nested Table 4 -->
-                                  <table>
-                                    <thead>
-                                      <tr>
-                                        <th colspan="2">Nested Table 4</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>
-                                          <ul style="text-align:left; margin:0; padding-left:20px;">
-                                            <li>List item 1</li>
-                                            <li>List item 2</li>
-                                            <li>List item 3</li>
-                                          </ul>
-                                        </td>
-                                        <td>End</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+                                  <ul style="text-align:left; margin:0; padding-left:20px;">
+                                    <li>List item 1</li>
+                                    <li>List item 2</li>
+                                    <li>List item 3</li>
+                                  </ul>
                                 </td>
-                                <td>JS</td>
+                                <td>End</td>
                               </tr>
                             </tbody>
                           </table>
                         </td>
-                        <td>Nested</td>
+                        <td>JS</td>
                       </tr>
                     </tbody>
                   </table>
                 </td>
+                <td>Nested</td>
               </tr>
             </tbody>
           </table>
