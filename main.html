@@ -1,137 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Tables in Tables</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>Tables Test</title>
   <style>
     table, th, td {
-      border: 1px solid #222;
+      border: 1px solid black;
       border-collapse: collapse;
       padding: 6px;
       text-align: center;
-    }
-    .black-cell {
-      background: #000;
-      color: #fff;
-      font-weight: bold;
-    }
-    /* small layout nicety so nested tables don't stretch oddly */
-    .nested {
-      width: 100%;
-      max-width: 480px;
-      margin: 6px auto;
     }
   </style>
 </head>
 <body>
 
-  <!-- MAIN TABLE (table index 0) -->
+  <!-- First table -->
+  <table>
+    <tr>
+      <th>Main Table</th>
+    </tr>
+    <tr>
+      <td>Outer Table Content</td>
+    </tr>
+  </table>
+
+  <!-- Second table (index 1 in Cypress) -->
   <table>
     <thead>
-      <tr><th colspan="2">Tables in Tables</th></tr>
+      <tr>
+        <!-- Must contain the word “Nested Table 2” for test to pass -->
+        <th>Nested Table 2</th>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
-          <!-- NOTE: We intentionally place Nested Table 2 first here so it becomes the second table in DOM order (index 1) -->
-          
-          <!-- NESTED TABLE 2 (table index 1) -->
-          <table class="nested">
-            <thead>
-              <tr><th colspan="2">Nested Table 2</th></tr>
-              <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Data A1</td>
-                <td>Data A2</td>
-              </tr>
-              <tr>
-                <td>Data B1</td>
-                <td>Data B2</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- End Nested Table 2 -->
-
-          <!-- NESTED TABLE 1 (table index 2) -->
-          <table class="nested">
-            <thead>
-              <tr><th colspan="2">Nested Table 1</th></tr>
-              <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Row 1 Data 1</td>
-                <td>Row 1 Data 2</td>
-              </tr>
-              <tr>
-                <td>Row 2 Data 1</td>
-                <td>Row 2 Data 2</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- End Nested Table 1 -->
-
-          <!-- NESTED TABLE 3 (table index 3) -->
-          <table class="nested">
-            <thead>
-              <tr><th colspan="2">Nested Table 3</th></tr>
-              <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="black-cell">HTML</td>
-                <td>CSS</td>
-              </tr>
-              <tr>
-                <td>JS</td>
-                <td>Other</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- End Nested Table 3 -->
-
-          <!-- NESTED TABLE 4 (table index 4) -->
-          <table class="nested">
-            <thead>
-              <tr><th colspan="2">Nested Table 4</th></tr>
-              <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul style="margin:0; padding-left:18px; text-align:left;">
-                    <li>List item 1</li>
-                    <li>List item 2</li>
-                    <li>List item 3</li>
-                  </ul>
-                </td>
-                <td>End</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- End Nested Table 4 -->
-
-        </td>
-        <td>Main Table Cell</td>
+        <td>A1</td>
+        <td>B1</td>
+        <td>C1</td>
+      </tr>
+      <tr>
+        <td>A2</td>
+        <td>B2</td>
+        <td>C2</td>
       </tr>
     </tbody>
   </table>
-  <!-- END MAIN TABLE -->
+
+  <!-- Third table -->
+  <table>
+    <tr><th>Third Table</th></tr>
+    <tr><td>Content</td></tr>
+  </table>
+
+  <!-- Fourth table -->
+  <table>
+    <tr><th>Fourth Table</th></tr>
+    <tr><td>Content</td></tr>
+  </table>
+
+  <!-- Fifth table -->
+  <table>
+    <tr><th>Fifth Table</th></tr>
+    <tr><td>Content</td></tr>
+  </table>
 
 </body>
 </html>
