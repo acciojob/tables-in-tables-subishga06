@@ -1,70 +1,181 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tables Test</title>
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 6px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested HTML Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Main Table Styling --- */
+        .main-container {
+            width: fit-content; /* Adjust container to fit the table exactly */
+            margin: 0 auto; /* Center the container */
+        }
+        .main-table {
+            width: 800px; /* Setting a fixed width for the main container */
+            border-collapse: collapse;
+            border: 2px solid black;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-table td {
+            border: 1px solid black;
+            padding: 10px;
+            vertical-align: top;
+            height: 250px; /* Uniform height for the main cells */
+        }
+
+        /* --- Nested Table Styling --- */
+        .nested-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black; /* Heavy border for the nested table perimeter */
+            margin: 0;
+        }
+
+        .nested-table th, .nested-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        .nested-table th {
+            background-color: #e0e0e0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Specific Requirement Styling */
+        .black-cell {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* List Styling within Table 1 */
+        .list-container {
+            text-align: left;
+            padding: 10px;
+        }
+        .list-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        /* Ensure the list items match the prompt exactly */
+        .list-container li {
+            list-style: disc; /* Force bullet points */
+        }
+
+    </style>
 </head>
 <body>
+    <div class="main-container">
+        <h1>Nested HTML Tables</h1>
+        <p>Your task is to create an HTML table layout with multiple nested tables and lists that closely resemble the structure shown in the image:</p>
 
-  <!-- First table -->
-  <table>
-    <tr>
-      <th>Main Table</th>
-    </tr>
-    <tr>
-      <td>Outer Table Content</td>
-    </tr>
-  </table>
+        <table class="main-table">
+            <!-- Row 1 of Main Table -->
+            <tr>
+                <!-- Cell 1: Contains Nested Table 2 -->
+                <td>
+                    <!-- Nested Table 2 -->
+                    <table class="nested-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Nested Table 2</th>
+                            </tr>
+                            <tr>
+                                <th>Column 1</th>
+                                <th>Column 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>abc</td>
+                                <td>def</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
 
-  <!-- Second table (index 1 in Cypress) -->
-  <table>
-    <thead>
-      <tr>
-        <!-- Must contain the word “Nested Table 2” for test to pass -->
-        <th>Nested Table 2</th>
-        <th>Column 1</th>
-        <th>Column 2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>A1</td>
-        <td>B1</td>
-        <td>C1</td>
-      </tr>
-      <tr>
-        <td>A2</td>
-        <td>B2</td>
-        <td>C2</td>
-      </tr>
-    </tbody>
-  </table>
+                <!-- Cell 2: Contains Nested Table 1 -->
+                <td>
+                    <!-- Nested Table 1 -->
+                    <table class="nested-table">
+                        <thead>
+                            <tr>
+                                <th>Nested Table 1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="list-container">
+                                    <!-- Required List -->
+                                    <ul>
+                                        <li>List item 1</li>
+                                        <li>List item 2</li>
+                                        <li>List item 3</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
 
-  <!-- Third table -->
-  <table>
-    <tr><th>Third Table</th></tr>
-    <tr><td>Content</td></tr>
-  </table>
+            <!-- Row 2 of Main Table -->
+            <tr>
+                <!-- Cell 3: Contains Nested Table 3 -->
+                <td>
+                    <!-- Nested Table 3 -->
+                    <table class="nested-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Nested Table 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" style="color: purple;">Nested Table</a></td>
+                                <td>Demo Continued</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
 
-  <!-- Fourth table -->
-  <table>
-    <tr><th>Fourth Table</th></tr>
-    <tr><td>Content</td></tr>
-  </table>
-
-  <!-- Fifth table -->
-  <table>
-    <tr><th>Fifth Table</th></tr>
-    <tr><td>Content</td></tr>
-  </table>
+                <!-- Cell 4: Contains Nested Table 4 -->
+                <td>
+                    <!-- Nested Table 4 -->
+                    <table class="nested-table">
+                        <thead>
+                            <tr>
+                                <th>Nested Table 4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- Required Black Background Cell -->
+                                <td class="black-cell">HTML</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
